@@ -1,0 +1,14 @@
+root@host:~# cat /etc/sudoers.d/sudo-nopasswd
+# Allow users in the sudo-nopasswd group to run any command without
+# being prompted for a password.
+%sudo-nopasswd ALL=(ALL) NOPASSWD:ALL
+
+matthew@host:~$ tail -5 /etc/ssh/sshd_config
+# Changed from defaults
+PermitRootLogin no
+AuthenticationMethods publickey
+PasswordAuthentication no
+
+matthew@host:~$ grep Reboot /etc/apt/apt.conf.d/50unattended-upgrades
+Unattended-Upgrade::Automatic-Reboot "true";
+Unattended-Upgrade::Automatic-Reboot-Time "02:00";
