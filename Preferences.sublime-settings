@@ -1,6 +1,7 @@
 {
   "always_show_minimap_viewport": true,
   "auto_complete": false,
+  "auto_match_enabled": false,
   "draw_minimap_border": true,
   "font_size": 12,
   "highlight_modified_tabs": true,
