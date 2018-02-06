@@ -8,7 +8,7 @@ alias ..="cd .."
 
 complete -C "/usr/local/bin/aws_completer" aws
 
-source "${HOME}/bin/git-prompt.sh"
+[ -f "${HOME}/bin/git-prompt.sh" ] && . "${HOME}/bin/git-prompt.sh"
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
