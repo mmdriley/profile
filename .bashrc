@@ -24,3 +24,4 @@ export CLICOLOR=xterm-color
 export LSCOLORS=Exfxcxdxbxegedabagacad
 
 export HISTCONTROL=ignorespace
+shopt -s histappend checkwinsize
