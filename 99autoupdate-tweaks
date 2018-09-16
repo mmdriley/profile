@@ -1,0 +1,23 @@
+// Write to: /etc/apt/apt.conf.d/99autoupdate-tweaks
+
+// Useful references:
+// * https://help.ubuntu.com/community/AutomaticSecurityUpdates
+// * https://github.com/mvo5/unattended-upgrades/blob/master/data/50unattended-upgrades.Ubuntu
+// * https://manpages.debian.org/stretch/apt/apt.conf.5.en.html
+// * https://salsa.debian.org/apt-team/apt/blob/master/debian/apt.systemd.daily
+
+// This config assumes we've *already* installed `unattended-upgrades`.
+// So `/etc/apt/apt.conf.d/20auto-upgrades` should exist and contain:
+//
+// ```
+// APT::Periodic::Update-Package-Lists "1";
+// APT::Periodic::Unattended-Upgrade "1";
+// ```
+//
+
+Unattended-Upgrade::Remove-Unused-Dependencies "true";
+Unattended-Upgrade::Automatic-Reboot "true";
+Unattended-Upgrade::Automatic-Reboot-Time "02:00";
+
+// "apt-get autoclean" every N days. 0 means disabled.
+APT::Periodic::AutocleanInterval "7";
