@@ -2,5 +2,6 @@
     "editor.autoClosingBrackets": false,
     "window.zoomLevel": 0,
     "workbench.startupEditor": "newUntitledFile",
-    "editor.wordBasedSuggestions": false
+    "editor.wordBasedSuggestions": false,
+    "extensions.ignoreRecommendations": true
 }
