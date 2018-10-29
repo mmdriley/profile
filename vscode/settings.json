@@ -1,5 +1,5 @@
 {
-    "editor.autoClosingBrackets": false,
+    "editor.autoClosingBrackets": "never",
     "window.zoomLevel": 0,
     "workbench.startupEditor": "newUntitledFile",
     "editor.wordBasedSuggestions": false,
