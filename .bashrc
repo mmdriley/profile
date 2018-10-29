@@ -19,6 +19,7 @@ export GIT_PS1_SHOWUPSTREAM=git
 BOLD=$(tput bold)
 RESET=$(tput sgr0)
 export PROMPT_COMMAND='__git_ps1 "'"${BOLD}\w${RESET}"'" "\n$ " " [%s]"'
+# export PS1="${BOLD}\w${RESET}\n$ "
 
 export CLICOLOR=xterm-color
 export LSCOLORS=Exfxcxdxbxegedabagacad
