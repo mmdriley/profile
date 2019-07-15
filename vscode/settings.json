@@ -1,7 +1,13 @@
 {
-    "editor.autoClosingBrackets": "never",
-    "window.zoomLevel": 0,
     "workbench.startupEditor": "newUntitledFile",
+    "extensions.ignoreRecommendations": true,
+
+    "editor.autoClosingBrackets": "never",
     "editor.wordBasedSuggestions": false,
-    "extensions.ignoreRecommendations": true
+
+    // Makefiles must always indent with tabs.
+    "[makefile]": {
+        "editor.insertSpaces": false,
+        "editor.detectIndentation": false
+    },
 }
