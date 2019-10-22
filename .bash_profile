@@ -1,5 +1,3 @@
-# .bash_profile is executed for login shells
+# ~/.bash_profile is executed when an interactive login shell starts
 
-if [ -f ~/.bashrc ]; then
-  source ~/.bashrc
-fi
+[[ -f ~/.bashrc ]] && . ~/.bashrc
