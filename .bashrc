@@ -69,9 +69,13 @@ esac
 
 __ps1_pre() {
   local pre
-  pre+='\[\e]0;'  # start setting title -- see `tput tsl` (to status line)
-  pre+='\u@\h:\w'  # {user}@{host}:{working directory}
-  pre+='\a\]'  # end title -- see `tput fsl` (from status line)
+
+  # TODO: set title
+  # this will require more care on macOS where the Terminal has its own
+  # opinions and configurable preferences on how the title will be set
+  # pre+='\[\e]0;'  # start setting title -- see `tput tsl` (to status line)
+  # pre+='\u@\h:\w'  # {user}@{host}:{working directory}
+  # pre+='\a\]'  # end title -- see `tput fsl` (from status line)
 
   pre+='\[\e[1;32m\]'  # bold+green
   pre+='\u'  # username
