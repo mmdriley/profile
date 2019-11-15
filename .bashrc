@@ -64,6 +64,12 @@ case "$(uname)" in
     #   https://packages.debian.org/stable/all/bash-completion/filelist
     [[ -f /usr/share/bash-completion/bash_completion ]] &&
       . /usr/share/bash-completion/bash_completion
+
+    # Make scripts installed with `pip3 --user` available on $PATH
+    # refs:
+    #   https://pip.pypa.io/en/stable/reference/pip_install/#cmdoption-user
+    #   https://www.freedesktop.org/software/systemd/man/file-hierarchy.html#Home%20Directory
+    [[ -d "${HOME}/.local/bin" ]] && PATH="${PATH}:${HOME}/.local/bin"
     ;;
 esac
 
