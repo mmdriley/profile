@@ -70,17 +70,20 @@ esac
 __ps1_pre() {
   local pre
 
-  # TODO: set title
-  # this will require more care on macOS where the Terminal has its own
-  # opinions and configurable preferences on how the title will be set
-  # pre+='\[\e]0;'  # start setting title -- see `tput tsl` (to status line)
-  # pre+='\u@\h:\w'  # {user}@{host}:{working directory}
-  # pre+='\a\]'  # end title -- see `tput fsl` (from status line)
+  # Set terminal title.
+  # The macOS Terminal has its own (configurable) ideas about what information
+  # is displayed in the title bar -- see e.g. the `update_terminal_cwd`
+  # function in `/etc/bashrc_Apple_Terminal` -- so we don't add a title there.
+  # We still explicitly set an *empty* title to clean up after SSH sessions to
+  # hosts that might set it.
+  pre+='\[\e]0;'  # start setting title -- see `tput tsl` (to status line)
+  if [[ "${TERM_PROGRAM}" != "Apple_Terminal" ]]; then
+    pre+='\u@\h:\w'  # {user}@{host}:{working directory}
+  fi
+  pre+='\a\]'  # end title -- see `tput fsl` (from status line)
 
   pre+='\[\e[1;32m\]'  # bold+green
-  pre+='\u'  # username
-  pre+='@'
-  pre+='\h'  # host
+  pre+='\u@\h'  # {user}@{host}
   pre+='\[\e[m\]'  # reset
   pre+=':'
   pre+='\[\e[1;34m\]'  # bold+blue
