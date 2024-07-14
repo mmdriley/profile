@@ -1,3 +1,5 @@
+// https://github.com/mmdriley/profile/blob/master/vscode/settings.json
+
 {
     "workbench.startupEditor": "newUntitledFile",
     "extensions.ignoreRecommendations": true,
