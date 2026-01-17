@@ -7,10 +7,13 @@ export EDITOR=nano
 
 autoload -Uz compinit && compinit
 
-# ~/.zshenv should be:
-# ```
-# eval "$(/opt/homebrew/bin/brew shellenv)"
-# ```
+# Homebrew config has to be in `.zshrc` or `.zprofile` and *not* in `.zshenv`,
+# since macOS's `/etc/zprofile` (which runs after `.zshenv`) reorders `$PATH`
+# to prefer system paths like `/usr/bin`.
+# ref: https://gist.github.com/Linerre/f11ad4a6a934dcf01ee8415c9457e7b2#zsh
+[[ -f /opt/homebrew/bin/brew ]] && {
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+}
 
 [[ -n "${HOMEBREW_PREFIX}" ]] && {
   # homebrew is installed
