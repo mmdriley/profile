@@ -3,6 +3,13 @@
 # Exit if we've somehow been invoked for a non-interactive shell.
 [ -n "$PS1" ] || return
 
+[[ -d "${HOME}/.bashrc.d" ]] && {
+  # TODO: move a lot of this file into .bashrc.d/*.sh
+  for config in "${HOME}"/.bashrc.d/*.sh; do
+    [[ -r "${config}" ]] && source "${config}"
+  done
+}
+
 export EDITOR=nano
 alias ..='cd ..'
 
